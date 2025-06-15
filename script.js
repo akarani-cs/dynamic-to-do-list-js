@@ -1,9 +1,23 @@
 document.addEventListener("DOMContentLoaded", function(){
 
+
+
 const addButton = document.getElementById("add-task-btn");          //store the button retrieved from the button element
 
 const taskInput = document.getElementById("task-input").value;     //store the input retrieved from the input field
 const taskList = document.getElementById("task-list").value;            //store the list retrieved from the ul element
+
+const storedTasks = localStorage.getItem("taskList");          //retrieve the task list from local storage
+
+if (storedTasks) {
+    const tasks = JSON.parse(storedTasks);    //parse the tasks from the local storage
+    tasks.forEach(taskText => {
+        const newListItem = document.createElement("li");        //create a new list item
+        this.links.textContext = taskText;         //set the text content of the list item
+        taskList.appendChild(newListItem);          //append the list item to the task list
+    })
+}
+
 
 
 
@@ -16,7 +30,6 @@ function addTask() {                                                    //add ta
     else {
 const newListItem = document.createElement("li");         //create a new list item
 newListItem.textContent = "taskText";                   //set the text content
-        classList.add
 
 
 
@@ -63,3 +76,5 @@ addTask();          //call the addTask function when the page loads
 
 
 });
+
+addTask();          //call the addTask function when the page loads
