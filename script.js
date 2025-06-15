@@ -16,6 +16,7 @@ function addTask() {                                                    //add ta
     else {
 const newListItem = document.createElement("li");         //create a new list item
 newListItem.textContent = "taskText";                   //set the text content
+        classList.add
 
 
 
